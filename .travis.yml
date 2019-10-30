@@ -1,6 +1,7 @@
 language: c
 compiler:
-? ? - gcc
+    - gcc
 script:
-? ? - test/make
-? ? - test/make expect=test/sample.bmp test 
+    - cd test
+    - make
+    - make expect=../sample.bmp test 
