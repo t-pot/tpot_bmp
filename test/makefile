@@ -1,5 +1,5 @@
 CC = gcc
-CFLAGS = -std=c99
+CFLAGS = -std=c++11
 TARGET = a.out
 
 $(TARGET): sample.cpp
