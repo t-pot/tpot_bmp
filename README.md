@@ -37,7 +37,7 @@ This code will make result.bmp as below.
 
 # What's this?
 I have participated in a [Raytraining camp](https://sites.google.com/site/raytracingcamp5/), the rule of this event is to finish the program within a certain time.
-As a participant, there is a strong desire to calculate to the last micro minute, but as @gam0022 mentioned[1](https://gam0022.net/blog/2019/09/18/rtcamp7/#png%E3%81%AE%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E6%99%82%E9%96%93%E3%81%AE%E7%9F%AD%E7%B8%AE), storage time becomes a big problem.
+As a participant, there is a strong desire to calculate to the last micro minute, but as @gam0022 mentioned[[1]](https://gam0022.net/blog/2019/09/18/rtcamp7/#png%E3%81%AE%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E6%99%82%E9%96%93%E3%81%AE%E7%9F%AD%E7%B8%AE), storage time becomes a big problem.
 
 The higher the resolution, the longer the save time. This is a big problem in the future.
 We want to compute.
