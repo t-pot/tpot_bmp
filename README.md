@@ -13,10 +13,17 @@ An example code for storeing a bmp file is below.
 int main(int args, int argc, char* argv[])
 {
 	tpot::bmp* bmp = new  tpot::bmp(1920, 1080);// width and height
-
-	// write image
+	
+	// render image! (0, 0) is left-bottom
 	unsigned char* p = bmp->get_image_addr();
-//      p[3*width*y+3*x+BGR] = xxx; // render! (0, 0) is left-bottom
+	for (int y = 0; y < height; y++) {
+		int idx = 3 * width * y;
+		for (int x = 0; x < width; x++) {
+			p[idx++] = 128;             // Blue
+			p[idx++] = 256 * y / width; // Green
+			p[idx++] = 256 * x / width; // Red
+		}
+	}
 
 	bmp->save("result.bmp");
 	delete bmp;
@@ -24,6 +31,10 @@ int main(int args, int argc, char* argv[])
 	return 0;
 }
 ```
+This code will make result.bmp as below.
+
+![結果画像:俺なりにすごくしてみる](test/sample.bmp)
+
 # What's this?
 I have participated in a [Raytraining camp](https://sites.google.com/site/raytracingcamp5/), the rule of this event is to finish the program within a certain time.
 As a participant, there is a strong desire to calculate to the last micro minute, but as @gam0022 mentioned[1](https://gam0022.net/blog/2019/09/18/rtcamp7/#png%E3%81%AE%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC%E3%83%89%E6%99%82%E9%96%93%E3%81%AE%E7%9F%AD%E7%B8%AE), storage time becomes a big problem.
