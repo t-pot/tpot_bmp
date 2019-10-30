@@ -17,11 +17,11 @@ int main(int argc, char* argv[])
 	// render image! (0, 0) is left-bottom
 	unsigned char* p = bmp->get_image_addr();
 	for (int y = 0; y < height; y++) {
-		int idx = 3 * width * y;
 		for (int x = 0; x < width; x++) {
-			p[idx++] = 128;             // Blue
-			p[idx++] = 256 * y / width; // Green
-			p[idx++] = 256 * x / width; // Red
+			int idx = 3 * (width * y + x);
+			p[idx] = 128;             // Blue
+			p[idx] = 256 * y / width; // Green
+			p[idx] = 256 * x / width; // Red
 		}
 	}
 
@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 ```
 This code will make result.bmp as below.
 
-![結果画像:俺なりにすごくしてみる](test/sample.bmp)
+![red and green gradation](test/sample.bmp)
 
 # What's this?
 I have participated in a [Raytraining camp](https://sites.google.com/site/raytracingcamp5/), the rule of this event is to finish the program within a certain time.
