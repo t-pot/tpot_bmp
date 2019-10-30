@@ -4,4 +4,4 @@ compiler:
 script:
     - cd test
     - make
-    - make expect=../sample.bmp test 
+    - make expect=sample.bmp test 
