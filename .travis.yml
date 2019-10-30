@@ -1,0 +1,6 @@
+language: c
+compiler:
+? ? - gcc
+script:
+? ? - test/make
+? ? - test/make expect=test/sample.bmp test 
