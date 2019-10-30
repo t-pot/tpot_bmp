@@ -7,21 +7,21 @@ A fast header only library to store BMP files with pre-memory allocation.
 Download "tpot_bmp.h" and include in your project.
 An example for storeing a bmp file is below.
 
-```
+```modified-sample.cpp
 #include "tpot_bmp.h"
 
 int main(int argc, char* argv[])
 {
-	tpot::bmp* bmp = new  tpot::bmp(1920, 1080);// width and height
+	tpot::bmp* bmp = new  tpot::bmp(1920, 1080);// width, height
 	
 	// render image! (0, 0) is left-bottom
 	unsigned char* p = bmp->get_image_addr();
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
 			int idx = 3 * (width * y + x);
-			p[idx+0] = 128;             // Blue
-			p[idx+1] = 256 * y / width; // Green
-			p[idx+2] = 256 * x / width; // Red
+			p[idx+0] = 128;             // blue
+			p[idx+1] = 256 * y / width; // green
+			p[idx+2] = 256 * x / width; // red
 		}
 	}
 
