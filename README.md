@@ -19,9 +19,9 @@ int main(int argc, char* argv[])
 	for (int y = 0; y < height; y++) {
 		for (int x = 0; x < width; x++) {
 			int idx = 3 * (width * y + x);
-			p[idx] = 128;             // Blue
-			p[idx] = 256 * y / width; // Green
-			p[idx] = 256 * x / width; // Red
+			p[idx+0] = 128;             // Blue
+			p[idx+1] = 256 * y / width; // Green
+			p[idx+2] = 256 * x / width; // Red
 		}
 	}
 
