@@ -10,7 +10,7 @@ An example code for storeing a bmp file is below.
 ```
 #include "tpot_bmp.h"
 
-int main(int args, int argc, char* argv[])
+int main(int argc, char* argv[])
 {
 	tpot::bmp* bmp = new  tpot::bmp(1920, 1080);// width and height
 	
