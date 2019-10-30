@@ -1,7 +1,7 @@
 #include <time.h>// clock
 #include "../tpot_bmp.h"
 
-int main(int args, int argc, char* argv[])
+int main(int args, int argc, char** argv)
 {
 	// initialize
 	int width = 1920;
@@ -29,7 +29,7 @@ int main(int args, int argc, char* argv[])
 	bmp->save("result.bmp");
 
 	clock_t end = clock();   // finish save time measurement
-	printf("save timeF%.2fms\n", (double)(end - start) * 1000.0 / (double)CLOCKS_PER_SEC);
+	printf("save timeÂF%.2fms\n", (double)(end - start) * 1000.0 / (double)CLOCKS_PER_SEC);
 
 	// finalize
 	delete bmp;
