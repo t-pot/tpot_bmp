@@ -1,7 +1,7 @@
 #include <time.h>// clock
 #include "../tpot_bmp.h"
 
-int main(int args, int argc, char** argv)
+int main(int argc, char* argv[])
 {
 	// initialize
 	int width = 1920;
