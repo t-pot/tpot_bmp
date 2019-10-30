@@ -7,6 +7,8 @@ A fast header only library to store BMP files with pre-memory allocation.
 Download "tpot_bmp.h" and include in your project.
 An example for storeing a bmp file is below.
 
+Recommended image width is a multiple of 4, otherwise the address of each pixel is a bit cumbersome.
+
 ```modified-sample.cpp
 #include "tpot_bmp.h"
 
@@ -58,6 +60,8 @@ In our environment, according to stb_image, the saving time which took 840ms is 
 
 "tpot_bmp.h"をダウンロードして、プロジェクトにインクルードしてください。
 bmpファイルを保存するサンプルコードは、上記になります。
+
+画像の幅は4の倍数が良いです。でないとアドレス計算が面倒くさくなります。
 
 ## 説明
 某[レイトレ合宿](https://sites.google.com/site/raytracingcamp5/)に参加したことがあるのですが、
