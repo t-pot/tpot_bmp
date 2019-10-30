@@ -1,3 +1,18 @@
+// https://github.com/t-pot/tpot_bmp/
+
+// How to use 
+/* 
+	int width = 1920;
+	int height = 1080;
+	tpot::bmp* bmp = new  tpot::bmp(width, height);
+
+	unsigned char* p = bmp->get_image_addr();
+	p[3*width*y+3*x+BGR] = xxx; // render! (0, 0) is left-bottom
+
+	bmp->save("hoge.bmp");
+	delete bmp;
+*/
+
 #pragma warning(disable : 4996)// using unsafe fopen
 
 #pragma once
@@ -14,8 +29,8 @@ namespace tpot
 	// Recommend a multiple of 4 for the width (4 bytes alignment required in each line)
 	// Address calculation when width is not a multiple of 4:
 	// addr(x,y) = get_image_addr() + (((3 * width * y + 3) >> 2) << 2) + 3 * x;
-	// •‚Í4‚Ì”{”‚ð„§(‰¡•ûŒü‚Í4byteƒAƒ‰ƒCƒƒ“ƒg‚³‚ê‚Ä‚¢‚È‚¢‚Æ‚¢‚¯‚È‚¢)
-	// •‚ª4‚Ì”{”‚Å‚È‚¢‚Æ‚«‚ÌƒAƒhƒŒƒXŒvŽZ‚ªãŽ®
+	// å¹…ã¯4ã®å€æ•°ã‚’æŽ¨å¥¨(æ¨ªæ–¹å‘ã¯4byteã‚¢ãƒ©ã‚¤ãƒ¡ãƒ³ãƒˆã•ã‚Œã¦ã„ãªã„ã¨ã„ã‘ãªã„)
+	// å¹…ãŒ4ã®å€æ•°ã§ãªã„ã¨ãã®ã‚¢ãƒ‰ãƒ¬ã‚¹è¨ˆç®—ãŒä¸Šå¼
 
 	class bmp
 	{
@@ -111,20 +126,5 @@ namespace tpot
 		inline color* image(int x, int y) { return (color*)(data_ + line_size_ * y + 3 * x); }
 	};
 }
-
-// How to use 
-/* 
-	int width = 1920;
-	int height = 1080;
-	tpot::bmp* bmp = new  tpot::bmp(width, height);
-
-	unsigned char* p = bmp->get_image_addr();
-	p[3*width*y+3*x+BGR] = xxx; // render! (0, 0) is left-bottom
-
-	bmp->save("hoge.bmp");
-	delete bmp;
-*/
-
-
 
 #endif // !INCLUDE_TPOT_BMP_H_
