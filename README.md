@@ -5,7 +5,7 @@ A fast header only library that can store BMP files with pre-memory allocation.
 
 # How to use
 Download "tpot_bmp.h" and include in your project.
-An example code for storeing a bmp file is below.
+An example for storeing a bmp file is below.
 
 ```
 #include "tpot_bmp.h"
